@@ -16,6 +16,7 @@ namespace main
             // Loop for user input and method triggering
             while (true)
             {
+                Console.WriteLine("\nWelcome To Vitual Art Gallery");
                 Console.WriteLine("\nChoose an action:");
                 Console.WriteLine("1. Add Artwork");
                 Console.WriteLine("2. Update Artwork");
@@ -35,9 +36,7 @@ namespace main
                         // Add Artwork
                         try
                         {
-                            Console.WriteLine("Enter Artwork Id:");
-                            int ArtworkID = Convert.ToInt32(Console.ReadLine());
-
+                           
                             Console.WriteLine("Enter Artwork Title:");
                             string title = Console.ReadLine();
 
