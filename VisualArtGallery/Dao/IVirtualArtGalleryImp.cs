@@ -207,7 +207,7 @@ namespace Dao
             try
             {
                 // Check if the user exists first
-                string userCheckQuery = "SELECT * FROM User WHERE UserID=@UserID";
+                string userCheckQuery = "SELECT * FROM [User] WHERE UserID=@UserID";
                 using (SqlCommand command = new SqlCommand(userCheckQuery, connection))
                 {
                     command.Parameters.AddWithValue("@UserID", userId);
@@ -221,7 +221,7 @@ namespace Dao
                 }
 
                 // If user exists, fetch their favorite artworks
-                string query = "SELECT a.* FROM Artwork a INNER JOIN User_Favorite_Artwork ufa ON a.ArtworkID = ufa.ArtworkID WHERE ufa.UserID = @UserID";
+                string query = "SELECT a.* FROM Artwork a INNER JOIN FavoriteArtworks ufa ON a.ArtworkID = ufa.ArtworkID WHERE ufa.UserID = @UserID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@UserID", userId);
